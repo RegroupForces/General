@@ -1,6 +1,8 @@
 """Given a list of digits, determine the integer that it represents."""
 
 
+
+
 def list_to_number(lst: list) -> int:
     """This function inputs a list, and returnns the number in it.
 
@@ -19,9 +21,13 @@ def list_to_number(lst: list) -> int:
 
     This assumes there are no negative numbers there.
     """
+    
     number = 0
     for i, digit in enumerate(lst):
         number += digit * 10 ** (len(lst) - (i+1))
+        #if length of list is 4, then (len(lst) - (i+1)) will evaluate to 
+        #3,2,1,0 for i in (0,1,2,3)respectively
+        #where 3 = 4-(0+1)
     return number
 
 if __name__ == "__main__":
